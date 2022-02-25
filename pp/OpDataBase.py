@@ -26,7 +26,7 @@ class OpDataBase:
         # sql 语句
         sql = "INSERT INTO `word` VALUES ('%s', '%s')" % (name, translate)
 
-        ## 这一行可能导致一次输入两个我先把他给注释掉
+        ## 这一行可能导致一次输入两个我先把他给注释掉000
         # # 使用 execute()  方法执行 SQL 查询
         # cursor.execute(sql)
         try:
