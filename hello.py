@@ -31,11 +31,11 @@ def ins():
     if request.method == "POST":
         name = request.form.get("name")
         translate = request.form.get("translate")
+        db = OpDataBase()
+        db.insertWord(name, translate)
         print(name, translate)
     return render_template("insert.html")
 
 
 if __name__ == "__main__":
-    aa = OpDataBase()
-    aa.print()
     app.run()
