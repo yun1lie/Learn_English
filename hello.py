@@ -1,5 +1,5 @@
-from crypt import methods
-from flask import Flask, render_template
+from pickle import GET
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 # 开启flask的调试模式
@@ -20,8 +20,12 @@ def hello():
 
 
 # 插入单词
-@app.route('/insert')
+@app.route('/insert',methods=['GET', 'POST'])
 def ins():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        translate = request.form.get('translate')
+        print(name, translate)
     return  render_template('insert.html')
 
 
