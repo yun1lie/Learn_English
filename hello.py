@@ -46,28 +46,36 @@ def ins():
 
             # f save
             # Save the file to a destination path or file object.  If the
-                # destination is a file object you have to close it yourself after the
-                # call.  The buffer size is the number of bytes held in memory during
-                # the copy process.  It defaults to 16KB.
+            # destination is a file object you have to close it yourself after the
+            # call.  The buffer size is the number of bytes held in memory during
+            # the copy process.  It defaults to 16KB.
 
-                # For secure file saving also have a look at :func:`secure_filename`.
+            # For secure file saving also have a look at :func:`secure_filename`.
 
-                # :param dst: a filename, :class:`os.PathLike`, or open file
-                #     object to write to.
-                # :param buffer_size: Passed as the ``length`` parameter of
-                #     :func:`shutil.copyfileobj`.
+            # :param dst: a filename, :class:`os.PathLike`, or open file
+            #     object to write to.
+            # :param buffer_size: Passed as the ``length`` parameter of
+            #     :func:`shutil.copyfileobj`.
 
-                # .. versionchanged:: 1.0
-                #     Supports :mod:`pathlib`.
-
+            # .. versionchanged:: 1.0
+            #     Supports :mod:`pathlib`.
 
             ## 测试用print
             print("filename is >>")
             print(f.filename)
 
-            f.save(dst=f.filename)  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
-            print("aaaaaaaa")
-            return "file uploaded successfully"
+            # 获取文件的后缀名
+            filename = f.filename
+            fexten = filename.split(".")[-1]
+
+            # 只接受excel文件 ， 结尾为xlsx的文件
+            if fexten == "xlsx":
+                f.save(dst="temp.xlsx")  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
+                print("aaaaaaaa")
+                f.close()  # 关闭f对象
+                return "file uploaded successfully"
+            else:
+                return "文件格式不符合要求"
         except:
             print("文件上传失败")
 
