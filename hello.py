@@ -41,9 +41,8 @@ def ins():
         try:
 
             f = request.files["file"]  # 这里面放的参数应该是文件表单input 的name
-            print(f.name)
-            print(f.save.__doc__)
             # ['__bool__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattr__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parse_content_type', 'close', 'content_length', 'content_type', 'filename', 'headers', 'mimetype', 'mimetype_params', 'name', 'save', 'stream']
+            # 'close', 'content_length', 'content_type', 'filename', 'headers', 'mimetype', 'mimetype_params', 'name', 'save', 'stream']
 
             # f save
             # Save the file to a destination path or file object.  If the
@@ -61,7 +60,12 @@ def ins():
                 # .. versionchanged:: 1.0
                 #     Supports :mod:`pathlib`.
 
-            f.save(dst=f.name)  # dst 参数表示文件上传后的名称
+
+            ## 测试用print
+            print("filename is >>")
+            print(f.filename)
+
+            f.save(dst=f.filename)  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
             print("aaaaaaaa")
             return "file uploaded successfully"
         except:
