@@ -3,6 +3,7 @@ from pickle import GET
 from flask import Flask, render_template, request
 
 from pp.OpDataBase import OpDataBase
+from pp.OpExcel import OpExcel
 
 app = Flask(__name__)
 # 开启flask的调试模式
@@ -44,6 +45,13 @@ def ins():
             if f.filename.split(".")[-1] == "xlsx":  # 判断文件后缀名
                 f.save(dst="temp.xlsx")  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
                 f.close()  # 关闭f对象
+
+
+                # 创建OpExcel类的对象，调用
+                ope = OpExcel("temp.xlsx")
+                print("aaaaaaaaa")
+                # ope.display()
+                ope.Insert_into_database()
                 return "file upload successfully!"
             else:
                 return "文件格式不符合要求"
