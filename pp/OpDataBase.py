@@ -4,7 +4,9 @@ import pymysql  # 导入pymysql库
 class OpDataBase:
     def __init__(self) -> None:
         # 打开数据库链接
-        self.db = pymysql.connect(host="localhost", user="root", password="root", db="le")
+        self.db = pymysql.connect(
+            host="localhost", user="root", password="root", db="le"
+        )
 
     # 而且笔者发现不同版本，有的报错有的不报错。
     # 最后修改如下：
