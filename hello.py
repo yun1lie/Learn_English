@@ -36,6 +36,7 @@ def ins():
             db = OpDataBase()
             db.insertWord(name, translate)
             print(name, translate)
+            del db
 
         # 上传文件
         try:
