@@ -60,21 +60,29 @@ def ins():
             # .. versionchanged:: 1.0
             #     Supports :mod:`pathlib`.
 
-            ## 测试用print
-            print("filename is >>")
-            print(f.filename)
+            # ## 测试用print
+            # print("filename is >>")
+            # print(f.filename)
 
-            # 获取文件的后缀名
-            filename = f.filename
-            fexten = filename.split(".")[-1]
+            # # 获取文件的后缀名
+            # filename = f.filename
+            # fexten = filename.split(".")[-1]
 
-            # 只接受excel文件 ， 结尾为xlsx的文件
-            if fexten == "xlsx":
-                f.save(dst="temp.xlsx")  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
-                print("aaaaaaaa")
-                f.close()  # 关闭f对象
-                return "file uploaded successfully"
-            else:
+            # # 只接受excel文件 ， 结尾为xlsx的文件
+            # if fexten == "xlsx":
+            #     f.save(dst="temp.xlsx")  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
+            #     print("aaaaaaaa")
+            #     f.close()  # 关闭f对象
+            #     return "file uploaded successfully"
+            # else:
+            #     return "文件格式不符合要求"
+
+
+            if f.filename.split(".")[-1] == "xlsx":
+                f.save(dst="temp.xlsx")
+                f.close()
+                return "file upload successfully!"
+            else :
                 return "文件格式不符合要求"
         except:
             print("文件上传失败")
