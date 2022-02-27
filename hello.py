@@ -20,7 +20,10 @@ def helloWorld():
 @app.route("/hello")
 def hello():
     # hello world 页面用来测试
-    return render_template("helloworld.html")
+    # data = "hello world !!!!"
+    op = OpDataBase()
+    data = op.random_query()
+    return render_template("helloworld.html", data=data)
 
 
 # 插入单词

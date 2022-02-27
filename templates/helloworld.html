@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>背单词</title>
 </head>
+
 <body>
     <!-- 先来一个功能插入单词 -->
     <a href="/insert">插入单词</a>
-    {%  print("hello world") %}
+    <table>
+        <tr>
+            <th>单词</th>
+            <th>翻译</th>
+        </tr>
+        <tr>
+            <td>{{ data[0] }}</td>
+            <td>{{ data[1] }}</td>
+        </tr>
+    </table>
+    <a href="/hello">下一个</a>
 </body>
+
 </html>
