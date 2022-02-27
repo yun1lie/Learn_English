@@ -8,19 +8,6 @@ class OpDataBase:
             host="localhost", user="root", password="root", db="le"
         )
 
-    # 而且笔者发现不同版本，有的报错有的不报错。
-    # 最后修改如下：
-    # db=pymysql.connect(host='*******',user='root',password='123456',db='shuai')
-    # 笔者猜测可能新旧版本之间有不同，没有指定参数造成了混乱。## 卑微异步
-    # ————————————————
-    # 版权声明：本文为CSDN博主「卑微异步」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-    # 原文链接：https://blog.csdn.net/weixin_51712887/article/details/115430444
-
-    # def __del__(self):
-    #     # print('这是析构函数')
-    #     # 关闭数据库链接
-    #     self.db.close()
-
     def insertWord(self, name, translate):
         # 使用 cursor() 方法创建一个游标对象 cursor
         cursor = self.db.cursor()

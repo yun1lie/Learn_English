@@ -46,7 +46,6 @@ def ins():
                 f.save(dst="temp.xlsx")  # dst 参数表示文件上传后的名称 f.filename 显示文件上传文件的名字
                 f.close()  # 关闭f对象
 
-
                 # 创建OpExcel类的对象，调用
                 ope = OpExcel("temp.xlsx")
                 print("aaaaaaaaa")
