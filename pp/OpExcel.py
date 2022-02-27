@@ -25,7 +25,6 @@ class OpExcel:
         try:
             # 按行将excel中读取出来的数据插入到数据库中
             for i in range(self.sh.nrows):
-                print("aaaaaaaa")
                 print(self.sh.row_values(i))
                 eop.insertWord(self.sh.row_values(i)[0], self.sh.row_values(i)[1])
         except:

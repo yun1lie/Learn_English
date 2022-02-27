@@ -48,7 +48,6 @@ def ins():
 
                 # 创建OpExcel类的对象，调用
                 ope = OpExcel("temp.xlsx")
-                print("aaaaaaaaa")
                 # ope.display()
                 ope.Insert_into_database()
                 return "file upload successfully!"
